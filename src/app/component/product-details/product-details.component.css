@@ -1,0 +1,22 @@
+
+.item-img{
+    position: relative;
+}
+.item-brand{
+    position: absolute;
+    top: 0
+}
+@media screen and  (max-width:991px) and (min-width: 576px) {
+    .order-tab{
+    -webkit-box-ordinal-group: 14;
+    -ms-flex-order: 13;
+    order: 13;
+    padding: 2rem;
+    }
+
+}
+@media screen and (max-width:575px){
+    .thumbnail-desc{
+        padding-top:2rem;
+    }
+}

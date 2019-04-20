@@ -1,0 +1,37 @@
+<!-- {{_product | json}} -->
+<div class="container" *ngIf="_product">
+  <div class="card custom-card mb-4 mt-2">
+    <div class="card-body custom-body">
+
+      <div class="row">
+        <!-- product image -->
+        <div class="col-lg-3 col-sm-6 text-center">
+          <div class="item-img">
+            <img class="img-fluid" src="{{_product.imageUrls.md}}" alt="">
+            <!-- brand image switch case -->
+            <span [ngSwitch]="_product.brand" class="item-brand">
+              <img *ngSwitchCase="'Samsung'" src="../../../assets/images/samsung.png" alt="{{_product.brand}}" />
+              <img *ngSwitchCase="'GE'" src="../../../assets/images/ge.png" alt="{{_product.brand}}" />
+              <img *ngSwitchCase="'LG'" src="../../../assets/images/lg.png" alt="{{_product.brand}}" />
+              <img *ngSwitchCase="'Whirlpool'" src="../../../assets/images/whirlpool.png" alt="{{_product.brand}}" />
+              <img *ngSwitchCase="'Maytag'" src="../../../assets/images/maytag.png" alt="{{_product.brand}}" />
+              <img *ngSwitchCase="'Bosch'" src="../../../assets/images/bosch.png" alt="{{_product.brand}}" />
+            </span>
+          </div>
+        </div>
+        <!-- product details -->
+        <div class="col-lg-5 col-sm-12 order-tab">
+          <h5 class="thumbnail-desc">{{_product.description}}</h5>
+          <ul class="thumbnail-bullet">
+            <li *ngFor="let list of _product.marketingBullets | slice:0:3">{{list}}</li>
+          </ul>
+        </div>
+        <!-- price -->
+        <div class="col-lg-4 col-sm-6 text-center">
+          <button type="button" (click)="getPrice()" class="btn custom-btn">Add to Cart</button>
+          <h2 class="mt-5">{{_product.networkPrice | currency}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

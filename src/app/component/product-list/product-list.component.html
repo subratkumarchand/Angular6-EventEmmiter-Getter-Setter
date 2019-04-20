@@ -1,0 +1,39 @@
+<!-- child component/ product details  -->
+<div *ngIf="!loader">
+  <app-product-details [product]="selectedItem"></app-product-details>
+</div>
+<div class="container">
+  <!-- Loader  -->
+  <div class="row list-scroll">
+    <div *ngIf="loader ; else productsItem">
+      Loading!, Please wait...
+    </div>
+    <!-- products loop -->
+    <ng-template #productsItem>
+      <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let product of products" (mouseover)="mouserEnter(product)">
+        <div class="card custom-card">
+          <div class="card-body item custom-body">
+            <div class="item-img">
+              <img class="img-fluid" src="{{product.imageUrls[resolution]}}" alt="">
+              <!-- brand image switch case -->
+              <span [ngSwitch]="product.brand" class="item-brand">
+                <img *ngSwitchCase="'Samsung'" src="../../../assets/images/samsung.png" alt="{{product.brand}}" />
+                <img *ngSwitchCase="'GE'" src="../../../assets/images/ge.png" alt="{{product.brand}}" />
+                <img *ngSwitchCase="'LG'" src="../../../assets/images/lg.png" alt="{{product.brand}}" />
+                <img *ngSwitchCase="'Whirlpool'" src="../../../assets/images/whirlpool.png" alt="{{product.brand}}" />
+                <img *ngSwitchCase="'Maytag'" src="../../../assets/images/maytag.png" alt="{{product.brand}}" />
+                <img *ngSwitchCase="'Bosch'" src="../../../assets/images/bosch.png" alt="{{product.brand}}" />
+              </span>
+            </div>
+            <!-- product description -->
+            <p class="card-text my-4">{{product.description}}</p>
+            <!-- product price -->
+            <h2 class="mb-5">{{product.networkPrice | currency}}</h2>
+            <a class="btn custom-btn">View More</a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <!--End products loop -->
+  </div>
+</div>

@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+body {
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  /*overflow: hidden;
+  max-height: 100%*/
+}
+
+.custom-card {
+  border: 3px solid #bfbfbf;
+  border-radius: 0
+}
+
+.custom-body {
+  background-color: #e5e5e5;
+}
+
+.custom-btn {
+  border: 2px solid #000000;
+  border-radius: 0;
+  background: #b7b7b7;
+  font-weight: 600;
+  font-size: 20px;
+  max-width: 300px;
+  width: 100%;
+  height: 50px;
+}
+
+.thumbnail-desc {
+  margin-bottom: 2rem;
+}
+
+.thumbnail-bullet li {
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.5rem
+}
